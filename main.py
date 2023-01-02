@@ -22,6 +22,7 @@ for i in cogs:
 
 @bot.event
 async def on_ready(): 
+    await bot.change_presence(activity=discord.Activity(name=f'{str(len(bot.guilds))}サーバー', type=5))
     print(f"Ready!")
 
 @bot.event
