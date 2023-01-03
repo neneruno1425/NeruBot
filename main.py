@@ -15,12 +15,18 @@ cogs = [
     'music',
     'parser',
     'rolepanel',
-    'ticket'
+    'ticket',
+    'serverstatus'
 ]
+
 cfg = tool.loadcfg()
 if cfg.get('autopublish') == None:
     cfg['autopublish'] = []
     tool.savecfg(cfg)
+if cfg.get('serverstatus') == None:
+    cfg['serverstatus'] = {}
+    tool.savecfg(cfg)
+
 for i in cogs:
     bot.load_extension("cogs." + i)
     print(f'Loaded {i}!')
