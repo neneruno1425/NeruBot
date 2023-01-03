@@ -16,6 +16,10 @@ cogs = [
     'rolepanel',
     'ticket'
 ]
+cfg = tool.loadcfg()
+if cfg.get('autopublish') == None:
+    cfg['autopublish'] = []
+    tool.savecfg(cfg)
 for i in cogs:
     bot.load_extension("cogs." + i)
     print(f'Loaded {i}!')
