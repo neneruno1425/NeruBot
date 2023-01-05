@@ -46,4 +46,8 @@ async def on_application_command_error(ctx, error):
     embed = discord.Embed(title="エラーが発生しました。",description=f'エラーが発生しました。エラー内容:\n```py{error}```')
     await ctx.respond(embed=embed)
 
+@bot.event
+async def on_error(error):
+    print(error)
+
 bot.run(os.environ['token'])
